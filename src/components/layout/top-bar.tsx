@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { Github } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const navItems = [
@@ -47,12 +48,22 @@ export function TopBar() {
             })}
           </div>
         </div>
-        <Link
-          href="/tasks/new"
-          className="bg-primary text-primary-foreground px-4 py-2 rounded-lg text-[13px] font-semibold hover:brightness-110 active:scale-[0.97] transition-all"
-        >
-          + New Task
-        </Link>
+        <div className="flex items-center gap-3">
+          <a
+            href="https://github.com/howells/todoodle"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <Github className="h-5 w-5" />
+          </a>
+          <Link
+            href="/tasks/new"
+            className="bg-primary text-primary-foreground px-4 py-2 rounded-lg text-[13px] font-semibold hover:brightness-110 active:scale-[0.97] transition-all"
+          >
+            + New Task
+          </Link>
+        </div>
       </div>
     </nav>
   )

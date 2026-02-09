@@ -2,6 +2,8 @@
 
 A dog care task tracker for managing walks, vet visits, medications, grooming, and more across multiple pups.
 
+**[Live Demo](https://todoodle.danielhowells.com)**
+
 Built as a demo using [Arc](https://usearc.dev).
 
 ## Stack
