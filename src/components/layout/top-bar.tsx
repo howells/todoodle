@@ -1,70 +1,70 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { Github } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { Github } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 const navItems = [
-  { href: "/", label: "Dashboard" },
-  { href: "/dogs", label: "My Pups" },
-  { href: "/tasks", label: "Tasks" },
-  { href: "/history", label: "History" },
-]
+	{ href: "/", label: "Dashboard" },
+	{ href: "/dogs", label: "My Pups" },
+	{ href: "/tasks", label: "Tasks" },
+	{ href: "/history", label: "History" },
+];
 
 export function TopBar() {
-  const pathname = usePathname()
+	const pathname = usePathname();
 
-  return (
-    <nav className="hidden md:block sticky top-0 z-50 border-b border-border bg-background">
-      <div className="max-w-[860px] mx-auto px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-8">
-          <Link
-            href="/"
-            className="font-[family-name:var(--font-fraunces)] text-[22px] font-semibold tracking-[-0.02em]"
-          >
-            🐾 Todoodle
-          </Link>
-          <div className="flex gap-6">
-            {navItems.map((item) => {
-              const isActive =
-                item.href === "/"
-                  ? pathname === "/"
-                  : pathname.startsWith(item.href)
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={cn(
-                    "text-sm font-medium pb-0.5 border-b-2 transition-colors",
-                    isActive
-                      ? "text-primary border-primary"
-                      : "text-muted-foreground border-transparent hover:text-foreground"
-                  )}
-                >
-                  {item.label}
-                </Link>
-              )
-            })}
-          </div>
-        </div>
-        <div className="flex items-center gap-3">
-          <a
-            href="https://github.com/howells/todoodle"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <Github className="h-5 w-5" />
-          </a>
-          <Link
-            href="/tasks/new"
-            className="bg-primary text-primary-foreground px-4 py-2 rounded-lg text-[13px] font-semibold hover:brightness-110 active:scale-[0.97] transition-all"
-          >
-            + New Task
-          </Link>
-        </div>
-      </div>
-    </nav>
-  )
+	return (
+		<nav className="hidden md:block sticky top-0 z-50 border-b border-border bg-background">
+			<div className="max-w-[860px] mx-auto px-6 py-4 flex items-center justify-between">
+				<div className="flex items-center gap-8">
+					<Link
+						href="/"
+						className="font-[family-name:var(--font-fraunces)] text-[22px] font-semibold tracking-[-0.02em]"
+					>
+						🐾 Todoodle
+					</Link>
+					<div className="flex gap-6">
+						{navItems.map((item) => {
+							const isActive =
+								item.href === "/"
+									? pathname === "/"
+									: pathname.startsWith(item.href);
+							return (
+								<Link
+									key={item.href}
+									href={item.href}
+									className={cn(
+										"text-sm font-medium pb-0.5 border-b-2 transition-colors",
+										isActive
+											? "text-primary border-primary"
+											: "text-muted-foreground border-transparent hover:text-foreground",
+									)}
+								>
+									{item.label}
+								</Link>
+							);
+						})}
+					</div>
+				</div>
+				<div className="flex items-center gap-3">
+					<a
+						href="https://github.com/howells/todoodle"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="text-muted-foreground hover:text-foreground transition-colors"
+					>
+						<Github className="h-5 w-5" />
+					</a>
+					<Link
+						href="/tasks/new"
+						className="bg-primary text-primary-foreground px-4 py-2 rounded-lg text-[13px] font-semibold hover:brightness-110 active:scale-[0.97] transition-all"
+					>
+						+ New Task
+					</Link>
+				</div>
+			</div>
+		</nav>
+	);
 }

@@ -16,6 +16,6 @@ Built as a demo using [Arc](https://usearc.dev).
 ## Development
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
