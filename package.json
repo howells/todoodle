@@ -29,7 +29,7 @@
 	},
 	"devDependencies": {
 		"@howells/lint": "^0.1.3",
-		"@howells/typescript-config": "^0.1.0",
+		"@howells/typescript-config": "^0.1.2",
 		"@tailwindcss/postcss": "^4",
 		"@types/node": "^20",
 		"@types/react": "^19",
